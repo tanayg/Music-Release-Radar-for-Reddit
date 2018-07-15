@@ -2,9 +2,9 @@ import config
 import spotify
 
 def main():
-    results = spotify.getArtistData(config.artists["RL Grime"])
-    for item in results["items"]:
-        print "Name: " + item["name"] + ", Release Date: " + item["release_date"]
+    albums = spotify.getArtistSongsAndAlbums(config.artists["RL Grime"])
+    for album in albums:
+        print "Name: " + album[0] + " | Release Date: " + album[1] + " | Link: " + album[2]
 
 
 if __name__ == "__main__":

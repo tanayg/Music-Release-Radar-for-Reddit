@@ -5,7 +5,9 @@ spotify = {
 
 artists = {
     "RL Grime" : "5eIbEEQnDM8yuDVB0bimSP",
-    "Said the Sky" : "4LZ4De2MoO3lP6QaNCfvcu"
+    "Said the Sky" : "4LZ4De2MoO3lP6QaNCfvcu",
+    "Kasbo" : "1ikID9RZZMvkuBGDWrqajq",
+    "Petit Biscuit" : "6gK1Uct5FEdaUWRWpU4Cl2"
 }
 
 reddit = {
