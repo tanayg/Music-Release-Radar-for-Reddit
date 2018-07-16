@@ -11,9 +11,9 @@ artists = {
     "Sufjan Stevens" : "4MXUO7sVCaFgFjoTI5ox5c"
 }
 
-reddit = {
-    "username" :  "insert_username_here",
-    "password" : "insert_password_here"
+redditConfig = {
+    "username" :  "NEW_MUSIC_BOT",
+    "password" : "Mustangs69"
 }
 
 subreddits = ["r/edm", "r/trap"]

@@ -1,5 +1,6 @@
 import config
 from spotify import *
+from reddit import *
 
 def main():
     spotifyObj = Spotify(config.spotifyConfig["clientId"], config.spotifyConfig["clientSecret"])
@@ -9,6 +10,8 @@ def main():
 
     results = spotifyObj.getNewestTrackOrAlbum(config.artists["Sufjan Stevens"])
     print results
+
+    redditObj = Reddit(config.redditConfig["username"], config.redditConfig["password"])
 
 
 if __name__ == "__main__":
