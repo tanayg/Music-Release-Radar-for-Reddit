@@ -1,4 +1,4 @@
-spotify = {
+spotifyConfig = {
     "clientId" : "557dd65eef884daba8184db4b49da0d3",
     "clientSecret" : "1bc161caa6844675bff53e5a12be5188"
 }
