@@ -3,12 +3,12 @@ from spotify import *
 
 def main():
     spotifyObj = Spotify(config.spotifyConfig["clientId"], config.spotifyConfig["clientSecret"])
-    albums = spotifyObj.getArtistTracksAndAlbums(config.artists["RL Grime"])
+    """albums = spotifyObj.getArtistTracksAndAlbums(config.artists["RL Grime"])
     for album in albums:
-        print "Name: " + album[0] + " | Release Date: " + album[1] + " | Link: " + album[2]
+        print "Name: " + album[0] + " | Release Date: " + album[1] + " | Link: " + album[2]"""
 
-    #results = getNewestTrackOrAlbum(config.artists["RL Grime"])
-    #print results
+    results = spotifyObj.getNewestTrackOrAlbum(config.artists["Sufjan Stevens"])
+    print results
 
 
 if __name__ == "__main__":

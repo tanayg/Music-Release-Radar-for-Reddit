@@ -20,12 +20,13 @@ class Spotify:
         return result["items"][0]["external_urls"]["spotify"]
 
     def getNewestTrackOrAlbum(self, artistId):
-        artistReleases = getArtistTracksAndAlbums(artistId)
+        artistReleases = self.getArtistTracksAndAlbums(artistId)
         latestReleaseDate = "0000-00-00"
         latestReleaseIndex = 0
 
         for i, release in enumerate(artistReleases):
             if release[1] > latestReleaseDate:
+                latestReleaseDate = release[1]
                 latestReleaseIndex = i
 
-        return artistReleases[i]
+        return artistReleases[latestReleaseIndex]
