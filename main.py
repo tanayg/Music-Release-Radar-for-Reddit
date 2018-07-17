@@ -11,7 +11,8 @@ def main():
     results = spotifyObj.getNewestTrackOrAlbum(config.artists["Sufjan Stevens"])
     print results
 
-    redditObj = Reddit(config.redditConfig["username"], config.redditConfig["password"])
+    redditObj = Reddit(config.redditConfig["userAgent"], config.redditConfig["clientId"], config.redditConfig["clientSecret"], 
+    config.redditConfig["username"], config.redditConfig["password"], config.subreddits[0])
 
 
 if __name__ == "__main__":

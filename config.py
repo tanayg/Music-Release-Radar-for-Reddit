@@ -12,8 +12,11 @@ artists = {
 }
 
 redditConfig = {
+    "userAgent" : "MusicReleaseRadar v1.0",
+    "clientId" : "BO02SjllJfCMAg",
+    "clientSecret" : "SeLj_eSwbpKYhWixevs2Ir8TCsY",
     "username" :  "NEW_MUSIC_BOT",
     "password" : "Mustangs69"
 }
 
-subreddits = ["r/edm", "r/trap"]
+subreddits = ["edm", "trap"]
