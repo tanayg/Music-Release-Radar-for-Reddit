@@ -14,6 +14,8 @@ def main():
     redditObj = Reddit(config.redditConfig["userAgent"], config.redditConfig["clientId"], config.redditConfig["clientSecret"], 
     config.redditConfig["username"], config.redditConfig["password"], config.subreddits[0])
 
+    print redditObj.getSubredditDetails()
+
 
 if __name__ == "__main__":
     main()
