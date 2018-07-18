@@ -15,8 +15,10 @@ redditConfig = {
     "userAgent" : "MusicReleaseRadar v1.0",
     "clientId" : "BO02SjllJfCMAg",
     "clientSecret" : "SeLj_eSwbpKYhWixevs2Ir8TCsY",
-    "username" :  "NEW_MUSIC_BOT",
-    "password" : "Mustangs69"
+    #"username" :  "NEW_MUSIC_BOT",
+    #"password" : "Mustangs69"
+    "username" :  "MonsterDevourer",
+    "password" : "Pokemon1"
 }
 
 subreddits = ["testingground4bots", "edm", "trap"]
