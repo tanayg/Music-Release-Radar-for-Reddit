@@ -5,14 +5,24 @@ class Spotify:
     def __init__(self, clientId, clientSecret):
         self.spotifyApi = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(clientId, clientSecret))
 
+    def getTrackOrAlbumArtists(self, artists):
+        artistList = ""
+        for artist in artists:
+            if artistList != "":
+                artistList = artistList + ", "
+            artistList = artistList + artist["name"]
+        return artistList
+
     def getArtistTracksAndAlbums(self, artistId):
         result = self.spotifyApi.artist_albums(artistId)
-        retVal = [] # List of tuples that contain (Album Name, Release Date, Spotify Link)
+        retVal = [] # List of tuples that contain (Artist Names, Album Name, Release Date, Spotify Link)
         for album in result["items"]:
             if album["album_type"] == "single":
-                retVal.append((album["name"], album["release_date"], self.getTrackLinkFromAlbum(album["external_urls"]["spotify"])))
+                artists = self.getTrackOrAlbumArtists(album["artists"])
+                trackLink = self.getTrackLinkFromAlbum(album["external_urls"]["spotify"])
+                retVal.append((artists, album["name"], album["release_date"], trackLink))
             else:
-                retVal.append((album["name"], album["release_date"], album["external_urls"]["spotify"]))
+                retVal.append((album["artists"], album["name"], album["release_date"], album["external_urls"]["spotify"]))
         return retVal
 
     def getTrackLinkFromAlbum(self, albumId):
@@ -25,8 +35,8 @@ class Spotify:
         latestReleaseIndex = 0
 
         for i, release in enumerate(artistReleases):
-            if release[1] > latestReleaseDate:
-                latestReleaseDate = release[1]
+            if release[2] > latestReleaseDate:
+                latestReleaseDate = release[2]
                 latestReleaseIndex = i
 
         return artistReleases[latestReleaseIndex]

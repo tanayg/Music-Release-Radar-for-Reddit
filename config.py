@@ -8,7 +8,8 @@ artists = {
     "Said the Sky" : "4LZ4De2MoO3lP6QaNCfvcu",
     "Kasbo" : "1ikID9RZZMvkuBGDWrqajq",
     "Petit Biscuit" : "6gK1Uct5FEdaUWRWpU4Cl2",
-    "Sufjan Stevens" : "4MXUO7sVCaFgFjoTI5ox5c"
+    "Sufjan Stevens" : "4MXUO7sVCaFgFjoTI5ox5c",
+    "Illenium" : "45eNHdiiabvmbp4erw26rg"
 }
 
 redditConfig = {
@@ -19,4 +20,4 @@ redditConfig = {
     "password" : "Mustangs69"
 }
 
-subreddits = ["edm", "trap"]
+subreddits = ["testingground4bots", "edm", "trap"]
