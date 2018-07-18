@@ -4,11 +4,10 @@ spotifyConfig = {
 }
 
 artists = {
-    "RL Grime" : "5eIbEEQnDM8yuDVB0bimSP",
     "Said the Sky" : "4LZ4De2MoO3lP6QaNCfvcu",
+    "RL Grime" : "5eIbEEQnDM8yuDVB0bimSP",
     "Kasbo" : "1ikID9RZZMvkuBGDWrqajq",
     "Petit Biscuit" : "6gK1Uct5FEdaUWRWpU4Cl2",
-    "Sufjan Stevens" : "4MXUO7sVCaFgFjoTI5ox5c",
     "Illenium" : "45eNHdiiabvmbp4erw26rg"
 }
 

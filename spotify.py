@@ -7,22 +7,31 @@ class Spotify:
 
     def getTrackOrAlbumArtists(self, artists):
         artistList = ""
+
         for artist in artists:
             if artistList != "":
                 artistList = artistList + ", "
             artistList = artistList + artist["name"]
+        
         return artistList
 
     def getArtistTracksAndAlbums(self, artistId):
         result = self.spotifyApi.artist_albums(artistId)
         retVal = [] # List of tuples that contain (Artist Names, Album Name, Release Date, Spotify Link)
+
         for album in result["items"]:
+            artists = self.getTrackOrAlbumArtists(album["artists"])
+            albumName = album["name"]
+            releaseDate = album["release_date"]
+            trackLink = ""
+
             if album["album_type"] == "single":
-                artists = self.getTrackOrAlbumArtists(album["artists"])
                 trackLink = self.getTrackLinkFromAlbum(album["external_urls"]["spotify"])
-                retVal.append((artists, album["name"], album["release_date"], trackLink))
             else:
-                retVal.append((album["artists"], album["name"], album["release_date"], album["external_urls"]["spotify"]))
+                trackLink = album["external_urls"]["spotify"]
+            
+            retVal.append((artists, albumName, releaseDate, trackLink))
+        
         return retVal
 
     def getTrackLinkFromAlbum(self, albumId):
