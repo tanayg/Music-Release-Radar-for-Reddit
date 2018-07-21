@@ -8,17 +8,19 @@ artists = {
     "RL Grime" : "5eIbEEQnDM8yuDVB0bimSP",
     "Kasbo" : "1ikID9RZZMvkuBGDWrqajq",
     "Petit Biscuit" : "6gK1Uct5FEdaUWRWpU4Cl2",
-    "Illenium" : "45eNHdiiabvmbp4erw26rg"
+    "Illenium" : "45eNHdiiabvmbp4erw26rg",
+    "DROELOE" : "0u18Cq5stIQLUoIaULzDmA",
+    "Ekali" : "0Y0QSi6lz1bPik5Ffjr8sd"
 }
 
 redditConfig = {
     "userAgent" : "MusicReleaseRadar v1.0",
     "clientId" : "BO02SjllJfCMAg",
     "clientSecret" : "SeLj_eSwbpKYhWixevs2Ir8TCsY",
-    #"username" :  "NEW_MUSIC_BOT",
-    #"password" : "Mustangs69"
-    "username" :  "MonsterDevourer",
-    "password" : "Pokemon1"
+    "username" :  "NEW_MUSIC_BOT",
+    "password" : "Mustangs69"
+    #"username" :  "MonsterDevourer",
+    #"password" : "Pokemon1"
 }
 
 subreddits = ["testingground4bots", "edm", "trap"]
