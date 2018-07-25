@@ -24,20 +24,21 @@ def sleepUntil(checkTime):
 
 
 def job():
-    artist = "Kasbo"
-    print "Looking for new music by " + artist + "!"
+    artist = "DROELOE"
 
     spotifyObj = Spotify(config.spotifyConfig["clientId"], config.spotifyConfig["clientSecret"])
+    print "Connected to Spotify API"
 
     redditObj = Reddit(config.redditConfig["userAgent"], config.redditConfig["clientId"], config.redditConfig["clientSecret"], 
-    config.redditConfig["username"], config.redditConfig["password"], config.subreddits[1])
+    config.redditConfig["username"], config.redditConfig["password"], config.redditConfig["subreddit"])
+    print "Connected to Reddit API. Logged in as " + config.redditConfig["username"] + ". Posting to r/" + config.redditConfig["subreddit"]
 
 
     startTime = time.time()
 
     i = 0
     results = spotifyObj.getNewestTrackOrAlbum(config.artists[artist])
-    print "Last Release: (" + results[2] + ") Today: (" + datetime.datetime.today().strftime('%Y-%m-%d') + ")"
+    print "Last Release by " + artist + ": (" + results[2] + ") Today: (" + datetime.datetime.today().strftime('%Y-%m-%d') + ")"
 
     newTrackRelease = True
 
@@ -58,7 +59,7 @@ def job():
     #postResult = redditObj.createPost(results[0], results[1], results[3])
 
     if newTrackRelease:
-        print "Fetched from Spotify! Song Info: " + results[0] + ", " + results[1] + ", " + results[2] + ", " + results[3]
+        print "Found new music on " + artist + "'s Spotify! Song Info: " + results[0] + ", " + results[1] + ", " + results[2] + ", " + results[3]
         #print "Posted to Reddit! Post Link: " + postResult
     else:
         print "No new release from " + artist + " :("

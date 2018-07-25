@@ -18,7 +18,8 @@ redditConfig = {
     "clientId" : "BO02SjllJfCMAg",
     "clientSecret" : "SeLj_eSwbpKYhWixevs2Ir8TCsY",
     "username" :  "NEW_MUSIC_BOT",
-    "password" : "Mustangs69"
+    "password" : "Mustangs69",
+    "subreddit" : "edm"
 }
 
 subreddits = ["testingground4bots", "edm", "trap"]
