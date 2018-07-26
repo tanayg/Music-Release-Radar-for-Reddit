@@ -6,9 +6,9 @@ from spotify import *
 from reddit import *
 
 def main():
-    #while True:
-    #sleepUntil("59:25")
-    #postNewMusic()
+    while True:
+        sleepUntil("59:40")
+        postNewMusic("DROELOE")
 
 def sleepUntil(checkTime):
     currTime = datetime.datetime.now().time().strftime('%M:%S')
@@ -24,9 +24,7 @@ def sleepUntil(checkTime):
     print "I'm awake boiiii"
 
 
-def postNewMusic():
-    artist = "DROELOE"
-
+def postNewMusic(artist):
     spotifyObj = Spotify(config.spotifyConfig["clientId"], config.spotifyConfig["clientSecret"])
     print "Connected to Spotify API"
 
@@ -62,6 +60,8 @@ def postNewMusic():
     if newTrackRelease:
         print "Found new music on " + artist + "'s Spotify! Song Info: " + results[0] + ", " + results[1] + ", " + results[2] + ", " + results[3]
         #print "Posted to Reddit! Post Link: " + postResult
+        print "Exiting Program"
+        exit()
     else:
         print "No new release from " + artist + " as of " + datetime.datetime.now().strftime('%m/%d/%Y %H:%M')
 
