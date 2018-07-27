@@ -2,13 +2,16 @@ import config
 import time
 import datetime
 import requests
+import sys
 from spotify import *
 from reddit import *
 
 def main():
+    if sys.argv[1] not in config.artists:
+        sys.exit("Invalid artist name. Usage: python main.py <artistName>")
     while True:
         sleepUntil("59:40")
-        postNewMusic("DROELOE")
+        postNewMusic(sys.argv[1])
 
 def sleepUntil(checkTime):
     currTime = datetime.datetime.now().time().strftime('%M:%S')
@@ -55,11 +58,11 @@ def postNewMusic(artist):
             print "Connection refused. Trying again"
             time.sleep(4)
             pass
-    #postResult = redditObj.createPost(results[0], results[1], results[3])
+    postResult = redditObj.createPost(results[0], results[1], results[3])
 
     if newTrackRelease:
         print "Found new music on " + artist + "'s Spotify! Song Info: " + results[0] + ", " + results[1] + ", " + results[2] + ", " + results[3]
-        #print "Posted to Reddit! Post Link: " + postResult
+        print "Posted to Reddit! Post Link: " + postResult
         print "Exiting Program"
         exit()
     else:
