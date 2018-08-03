@@ -7,10 +7,12 @@ from spotify import *
 from reddit import *
 
 def main():
+    if sys.argv[2] == "-o":
+        postNewMusic(sys.argv[1])
     if sys.argv[1] not in config.artists:
         sys.exit("Invalid artist name. Usage: python main.py <artistName>")
     while True:
-        sleepUntil("59:40")
+        #sleepUntil("59:30")
         postNewMusic(sys.argv[1])
 
 def sleepUntil(checkTime):
@@ -24,7 +26,7 @@ def sleepUntil(checkTime):
         minDiff = 60 + minDiff
     print "Sleeping for " + str(minDiff) + ":" + str(secDiff)
     time.sleep(minDiff * 60 + secDiff)
-    print "I'm awake boiiii"
+    print "Done sleeping!"
 
 
 def postNewMusic(artist):
@@ -58,6 +60,9 @@ def postNewMusic(artist):
             print "Connection refused. Trying again"
             time.sleep(4)
             pass
+    
+    #if len(sys.argv) <= 2 or sys.argv[2] == "-o":
+        #sleepUntil("59:58")
     postResult = redditObj.createPost(results[0], results[1], results[3])
 
     if newTrackRelease:
