@@ -9,8 +9,7 @@ class Reddit:
         return (self.subreddit.display_name, self.subreddit.title)
 
 
-    def createPost(self, artistName, trackOrAlbumName, link):
+    def createPost(self, artistName, trackOrAlbumName, link, flair=None):
         titleText = artistName + " - " + trackOrAlbumName
         response = self.subreddit.submit(title=titleText, url=link)
         return response.shortlink
-        
