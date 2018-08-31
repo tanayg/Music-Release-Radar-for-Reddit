@@ -27,12 +27,6 @@ redditConfig = {
     "clientSecret" : "SeLj_eSwbpKYhWixevs2Ir8TCsY",
     "username" :  "NEW_MUSIC_BOT",
     "password" : "Mustangs69",
-    #"username" :  "MonsterDevourer",
-    #"password" : "Pokemon1",
-    #"username" :  "throwayylmfao",
-    #"password" : "Pokemon1",
-    #"username" :  "ZachLavine8",
-    #"password" : "Pokemon1",
     "subreddit" : "edm"
 }
 
